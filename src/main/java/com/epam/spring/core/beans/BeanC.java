@@ -1,7 +1,9 @@
 package com.epam.spring.core.beans;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BeanC {
     @Value("${beanC.name}")
     private String name;
@@ -9,7 +11,9 @@ public class BeanC {
     @Value("${beanC.value}")
     private int value;
 
-    public BeanC() {}
+    public BeanC() {
+        System.out.println("\t>> BeanC.Constructor");
+    }
 
     public String getName() {
         return name;
