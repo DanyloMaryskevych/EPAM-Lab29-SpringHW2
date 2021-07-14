@@ -1,10 +1,15 @@
 package com.epam.spring.core.beans;
 
-public class BeanA {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class BeanA implements InitializingBean, DisposableBean {
     private String name;
     private int value;
 
-    public BeanA() {}
+    public BeanA() {
+        System.out.println(">> BeanA.Constructor");
+    }
 
     public String getName() {
         return name;
@@ -28,5 +33,20 @@ public class BeanA {
                 "name='" + name + '\'' +
                 ", value=" + value +
                 '}';
+    }
+
+/*
+    The afterPropertiesSet or @PostConstruct annotated method
+    is called after an instance of class
+    is created and all the properties have been set.
+*/
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("\t>> BeanA: inside afterPropertiesSet() method.");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("\t>> BeanA: inside destroy() method.");
     }
 }
