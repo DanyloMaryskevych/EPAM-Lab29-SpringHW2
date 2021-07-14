@@ -1,7 +1,12 @@
 package com.epam.spring.core.beans;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class BeanC {
+    @Value("${beanC.name}")
     private String name;
+
+    @Value("${beanC.value}")
     private int value;
 
     public BeanC() {}
