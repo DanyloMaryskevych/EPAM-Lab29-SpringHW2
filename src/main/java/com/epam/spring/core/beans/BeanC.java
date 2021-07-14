@@ -12,7 +12,7 @@ public class BeanC {
     private int value;
 
     public BeanC() {
-        System.out.println("\t>> BeanC.Constructor");
+        System.out.println(">> BeanC.Constructor");
     }
 
     public String getName() {
@@ -37,5 +37,13 @@ public class BeanC {
                 "name='" + name + '\'' +
                 ", value=" + value +
                 '}';
+    }
+
+    private void beanCInit() {
+        System.out.println("\t>> BeanC.initMethod()");
+    }
+
+    private void beanCDestroy() {
+        System.out.println("\t>> BeanC.destroyMethod()");
     }
 }

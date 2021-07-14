@@ -10,19 +10,19 @@ import org.springframework.context.annotation.*;
 @PropertySource("classpath:application.properties")
 @Import(AppConfigTwo.class)
 public class AppConfigOne {
-    @Bean
+    @Bean(initMethod = "beanBInit", destroyMethod = "beanBDestroy")
     @DependsOn("beanD")
     public BeanB beanB() {
         return new BeanB();
     }
 
-    @Bean
+    @Bean(initMethod = "beanCInit", destroyMethod = "beanCDestroy")
     @DependsOn("beanB")
     public BeanC beanC() {
         return new BeanC();
     }
 
-    @Bean
+    @Bean(initMethod = "beanDInit", destroyMethod = "beanDDestroy")
     public BeanD beanD() {
         return new BeanD();
     }
