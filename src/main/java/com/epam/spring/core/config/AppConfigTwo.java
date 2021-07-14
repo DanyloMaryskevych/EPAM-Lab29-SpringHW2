@@ -1,6 +1,7 @@
 package com.epam.spring.core.config;
 
 import com.epam.spring.core.beans.BeanA;
+import com.epam.spring.core.beans.BeanE;
 import com.epam.spring.core.beans.BeanF;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,5 +18,10 @@ public class AppConfigTwo {
     @Bean
     public BeanA beanA() {
         return new BeanA();
+    }
+
+    @Bean
+    public BeanE beanE() {
+        return new BeanE();
     }
 }

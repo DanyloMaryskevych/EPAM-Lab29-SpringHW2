@@ -1,5 +1,8 @@
 package com.epam.spring.core.beans;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class BeanE {
     private String name;
     private int value;
@@ -28,5 +31,15 @@ public class BeanE {
                 "name='" + name + '\'' +
                 ", value=" + value +
                 '}';
+    }
+
+    @PostConstruct
+    public void afterInitMethod() {
+        System.out.println("\t>> BeanE: inside @PostConstruct method");
+    }
+
+    @PreDestroy
+    public void beforeDestructionMethod() {
+        System.out.println("\t>> BeanE: inside @PreDestroy method");
     }
 }
