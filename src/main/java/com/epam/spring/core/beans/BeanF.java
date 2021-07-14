@@ -4,7 +4,9 @@ public class BeanF {
     private String name;
     private int value;
 
-    public BeanF() {}
+    public BeanF() {
+        System.out.println("\t>> BeanF.Constructor");
+    }
 
     public String getName() {
         return name;
