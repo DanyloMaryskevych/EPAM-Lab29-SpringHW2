@@ -1,10 +1,16 @@
 package com.epam.spring.core.beans;
 
+import com.epam.spring.core.beans.annotations.IntegerValidator;
+import com.epam.spring.core.beans.annotations.NameValidator;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 public class BeanE {
+    @NameValidator
     private String name;
+
+    @IntegerValidator
     private int value;
 
     public BeanE() {}
@@ -35,6 +41,7 @@ public class BeanE {
 
     @PostConstruct
     public void afterInitMethod() {
+        this.value = 21;
         System.out.println("\t>> BeanE: inside @PostConstruct method");
     }
 

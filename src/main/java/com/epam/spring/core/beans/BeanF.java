@@ -1,7 +1,14 @@
 package com.epam.spring.core.beans;
 
+import com.epam.spring.core.beans.annotations.IntegerValidator;
+import com.epam.spring.core.beans.annotations.NameValidator;
+import org.springframework.context.annotation.Import;
+
 public class BeanF {
+    @NameValidator
     private String name;
+
+    @IntegerValidator
     private int value;
 
     public BeanF() {

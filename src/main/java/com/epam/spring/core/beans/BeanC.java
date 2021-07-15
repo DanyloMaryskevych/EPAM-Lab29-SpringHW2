@@ -1,14 +1,18 @@
 package com.epam.spring.core.beans;
 
+import com.epam.spring.core.beans.annotations.IntegerValidator;
+import com.epam.spring.core.beans.annotations.NameValidator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BeanC {
     @Value("${beanC.name}")
+    @NameValidator
     private String name;
 
     @Value("${beanC.value}")
+    @IntegerValidator
     private int value;
 
     public BeanC() {
