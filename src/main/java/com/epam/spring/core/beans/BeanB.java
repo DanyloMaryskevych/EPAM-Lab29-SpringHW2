@@ -43,6 +43,10 @@ public class BeanB {
         System.out.println("\t>> BeanB.initMethod()");
     }
 
+    private void initFactoryMethod() {
+        System.out.println("\t>> (BeanFactoryPostProcessor) BeanB.initMethod()");
+    }
+
     private void beanBDestroy() {
         System.out.println("\t>> BeanB.destroyMethod()");
     }
